@@ -1,0 +1,31 @@
+.header {
+  padding: 15px 0 16px;
+  border-bottom: 2px solid #B4CBDC;
+  .wrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+.header__logo {
+}
+@media screen and (max-width: 768px) {
+  .header { 
+    position: relative;
+    z-index: 10;
+    padding: 13px 0 12px;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15);
+    border-bottom: 0;   
+    background-color: #FBFCFC;
+    .wrapper {
+      justify-content: center;
+    }
+  }
+  .header__logo {
+    img {
+      width: 122px;
+      height: 30px;
+    }
+  }
+}
+
+@import url('header-navigation.less');
