@@ -1,31 +1,95 @@
 .header {
   padding: 15px 0 16px;
-  border-bottom: 2px solid #B4CBDC;
   .wrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
 }
 .header__logo {
+  display: inline-block;
+  width: 103px;
+  height: 28px;
+  text-indent: -999em;
+  background-image: url('/assets/images/logo.svg');
 }
-@media screen and (max-width: 768px) {
-  .header { 
-    position: relative;
-    z-index: 10;
-    padding: 13px 0 12px;
-    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15);
-    border-bottom: 0;   
-    background-color: #FBFCFC;
-    .wrapper {
-      justify-content: center;
-    }
-  }
-  .header__logo {
-    img {
-      width: 122px;
-      height: 30px;
-    }
-  }
-}
+.header__menu {}
+.header__menu__icon {
+  cursor: pointer;
+  background: #FF6C6C;
+    transition-duration: .25s;
+  & > div {
+    display: block;
+    position: absolute;
+    width: 26px;
+    height: 2px;
+    background-color: #fff;
+    transition-duration: .25s;
 
-@import url('header-navigation.less');
+    &:after, &:before {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      transition-duration: .25s;
+    }
+
+    &:before {
+      content: '';
+      top: -6px;
+    }
+
+    &:after {
+      content: '';
+      top: 6px;
+    }
+  }
+  &:hover {
+    background: rgba(255, 108, 108, 0.75);
+    & > div{
+      &:before {
+        top: -9px;
+      }
+      &:after {
+        top: 9px;
+      }
+    }
+  }
+}
+.header__heading {
+}
+.header__settings {
+  display: flex;
+  align-items: center;
+  & > a {
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+  }
+}
+.header__language {
+  background: #01576C;
+  opacity: 0.4;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  transition-duration: .25s;
+  &:hover {
+    color: #FFFFFF;
+  }
+}
+.header__phone {
+  background-color: #01576C;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('/assets/images/phone.svg');
+  transition-duration: .25s;
+  &:hover {
+    background-color: rgba(1, 87, 108, 0.75);
+  }
+
+}
