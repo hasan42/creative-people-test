@@ -6,18 +6,12 @@
     justify-content: space-between;
   }
 }
-.header__logo {
-  display: inline-block;
-  width: 103px;
-  height: 28px;
-  text-indent: -999em;
-  background-image: url('/assets/images/logo.svg');
-}
+
 .header__menu {}
 .header__menu__icon {
   cursor: pointer;
   background: #FF6C6C;
-    transition-duration: .25s;
+  transition-duration: .25s;
   & > div {
     display: block;
     position: absolute;
@@ -37,12 +31,12 @@
 
     &:before {
       content: '';
-      top: -6px;
+      top: -5px;
     }
 
     &:after {
       content: '';
-      top: 6px;
+      top: 5px;
     }
   }
   &:hover {
@@ -57,8 +51,19 @@
     }
   }
 }
+
 .header__heading {
 }
+.header__logo {
+  display: inline-block;
+  width: 103px;
+  height: 28px;
+  margin-top: 18px;
+  margin-left: 88px;
+  text-indent: -999em;
+  background-image: url('/assets/images/logo.svg');
+}
+
 .header__settings {
   display: flex;
   align-items: center;

@@ -1,0 +1,31 @@
+.article {
+  max-width: 988px;
+  margin: 112px auto 0;
+}
+
+.article-anchor {
+  margin-top: 52px;
+}
+.article-anchor__item {
+  position: relative;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  letter-spacing: -0.016em;
+  &:after {
+    position: absolute;
+    top: 2px;
+    right: -18px;
+    display: inline-block;
+    content: url('/assets/images/anchor.svg');
+  }
+  &:not(:last-child) {
+    margin-right: 61px;
+  }
+}
+
+.article-content {
+  margin-top: 79px;
+  max-width: 652px;
+}
