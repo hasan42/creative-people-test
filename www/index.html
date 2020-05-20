@@ -173,64 +173,34 @@
     <section id="news" class="news">
       <h2>Новости</h2>
       <div class="news-filter">
-        <div class="news-filter__item">2019 год</div>
-        <div class="news-filter__item">Все месяцы</div>
+        <div class="news-filter__item">
+          <div class="news-filter__selected">2019 год</div>
+          <ul class="news-filter__list">
+            <li data-filter="2018">2018</li>
+            <li data-filter="2017">2017</li>
+            <li data-filter="2016">2016</li>
+          </ul>
+        </div>
+        <div class="news-filter__item">
+          <div class="news-filter__selected">Все месяцы</div>
+          <ul class="news-filter__list">
+            <li data-filter="01">Январь</li>
+            <li data-filter="02">Февраль</li>
+            <li data-filter="03">Март</li>
+            <li data-filter="04">Апрель</li>
+            <li data-filter="05">Май</li>
+            <li data-filter="06">Июнь</li>
+            <li data-filter="07">Июль</li>
+            <li data-filter="08">Август</li>
+            <li data-filter="09">Сентябрь</li>
+            <li data-filter="10">Октябрь</li>
+            <li data-filter="11">Ноябрь</li>
+            <li data-filter="12">Декабрь</li>
+          </ul>
+        </div>
       </div>
-      <div class="news-list">
-        <div class="news-list__item">
-          <div class="news-list__item__image" style="background-image: url('/assets/images/news-0.jpg')"></div>
-          <p class="news-list__item__name"><a href="#">Киберпреступники тратят на атаки до  000</a></p>
-          <p class="news-list__item__text">Польша в суде ЕС добилась отмены разрешения Еврокомиссии на допуск «Газпрома» к мощностям Opal</p>
-          <p class="news-list__item__date">10.07.2019</p>
-        </div>
-        <div class="news-list__item">
-          <div class="news-list__item__image" style="background-image: url('/assets/images/news-1.jpg')"></div>
-          <p class="news-list__item__name"><a href="#">«Хотите, чтобы дети сотрудничали и решали проблемы? Тогда игра необходима»</a></p>
-          <p class="news-list__item__text">Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать</p>
-          <p class="news-list__item__date">25.06.2019</p>
-        </div>
-        <div class="news-list__item">
-          <div class="news-list__item__image" style="background-image: url('/assets/images/news-2.jpg')"></div>
-          <p class="news-list__item__name"><a href="#">Глобального среднего класса больше не становится</a></p>
-          <p class="news-list__item__text">Замедление Китая и общая неопределенность заморозили активы населения</p>
-          <p class="news-list__item__date">31.05.2019</p>
-        </div>
-        <div class="news-list__item">
-          <div class="news-list__item__image" style="background-image: url('/assets/images/news-3.jpg')"></div>
-          <p class="news-list__item__name"><a href="#">Скорость доступа к запрещенным сайтам ограничит суд</a></p>
-          <p class="news-list__item__text">Польша в суде ЕС добилась отмены разрешения Еврокомиссии допуск «Газпрома» к мощностям Opal</p>
-          <p class="news-list__item__date">10.07.2019</p>
-        </div>
-        <div class="news-list__item">
-          <div class="news-list__item__image" style="background-image: url('/assets/images/news-4.jpg')"></div>
-          <p class="news-list__item__name"><a href="#">Самая читающая страна в мире</a></p>
-          <p class="news-list__item__text">Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать</p>
-          <p class="news-list__item__date">25.06.2019</p>
-        </div>
-        <div class="news-list__item">
-          <div class="news-list__item__image" style="background-image: url('/assets/images/news-5.jpg')"></div>
-          <p class="news-list__item__name"><a href="#">Нуждаюсь в некоторой степени</a></p>
-          <p class="news-list__item__text">Замедление Китая и общая неопределенность заморозили активы населения</p>
-          <p class="news-list__item__date">31.05.2019</p>
-        </div>
-        <div class="news-list__item">
-          <div class="news-list__item__image" style="background-image: url('/assets/images/news-6.jpg')"></div>
-          <p class="news-list__item__name"><a href="#">Следственный комитет ищет экс-главу Северстали</a></p>
-          <p class="news-list__item__text">Польша в суде ЕС добилась отмены разрешения Еврокомиссии на допуск «Газпрома» к мощностям Opal</p>
-          <p class="news-list__item__date">10.07.2019</p>
-        </div>
-        <div class="news-list__item">
-          <div class="news-list__item__image" style="background-image: url('/assets/images/news-7.jpg')"></div>
-          <p class="news-list__item__name"><a href="#">«ПИК» уходит с Лондонской фондовой биржи</a></p>
-          <p class="news-list__item__text">Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать</p>
-          <p class="news-list__item__date">25.06.2019</p>
-        </div>
-        <div class="news-list__item">
-          <div class="news-list__item__image" style="background-image: url('/assets/images/news-8.jpg')"></div>
-          <p class="news-list__item__name"><a href="#">Самая читающая страна в мире</a></p>
-          <p class="news-list__item__text">Замедление Китая и общая неопределенность заморозили активы населения</p>
-          <p class="news-list__item__date">31.05.2019</p>
-        </div>
+      <div id="news-list" class="news-list">
+        
       </div>
       <div class="news-load-more">
         <button class="btn">Загрузить еще</button>
@@ -247,5 +217,6 @@
   <script src="/assets/js/jquery-3.5.1.min.js"></script>
   <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
   <script src="/assets/js/script.js"></script>
+  <script src="/assets/js/news.js"></script>
 </body>
 </html>
