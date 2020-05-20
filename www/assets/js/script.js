@@ -49,3 +49,20 @@ promoItems.forEach((el)=>{
   // let button = el.querySelector(".promo__item__close");
   el.addEventListener("click",toggleIt, false);
 });
+
+
+function scrollToAnchor(event){
+  event.preventDefault();
+  let str = event.target.href.split('#');
+  if(str.length <= 1){ return }
+  let findId = str[1];
+  let content = document.getElementById(findId);
+  if(!content){ return }
+  let scroll = content.offsetTop;
+  $("html,body").animate({ scrollTop: scroll }, 500);
+}
+
+let anchorItems = document.querySelectorAll(".article-anchor__item");
+anchorItems.forEach((el)=>{
+  el.addEventListener("click",scrollToAnchor, false);
+});
