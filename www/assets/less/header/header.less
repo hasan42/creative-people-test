@@ -1,10 +1,20 @@
 .header {
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
   padding: 15px 0 16px;
+  transform: translate(0px, 0px);
+  transition: transform 0.5s;
   .wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+}
+.header_hide {
+  transform: translate(0px, -100px);
 }
 
 .header__menu {}

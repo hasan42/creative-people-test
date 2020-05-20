@@ -1,5 +1,6 @@
 "use strict";
 
+/* slider */
 var swiper = new Swiper('.swiper-container', {
   pagination: {
     el: '.swiper-pagination',
@@ -11,6 +12,7 @@ var swiper = new Swiper('.swiper-container', {
   },
 });
 
+/* promo */
 function changeClass(makeActive){
   let promoItems = document.querySelectorAll(".promo__item");
   promoItems.forEach((el)=>{
@@ -29,8 +31,6 @@ function toggleIt(event){
   if(!parent.classList.contains("promo__item")){
     return
   }
-  console.log(parent)
-  // let parent = event.target.closest(".promo__item");
 
   if(parent.classList.contains("promo__item_active")){
     changeClass(false)
@@ -41,16 +41,14 @@ function toggleIt(event){
     parent.classList.remove("promo__item_de-active")
     parent.classList.add("promo__item_active")
   }
-
 }
 
 let promoItems = document.querySelectorAll(".promo__item");
 promoItems.forEach((el)=>{
-  // let button = el.querySelector(".promo__item__close");
   el.addEventListener("click",toggleIt, false);
 });
 
-
+/* anchor */
 function scrollToAnchor(event){
   event.preventDefault();
   let str = event.target.href.split('#');
@@ -66,3 +64,16 @@ let anchorItems = document.querySelectorAll(".article-anchor__item");
 anchorItems.forEach((el)=>{
   el.addEventListener("click",scrollToAnchor, false);
 });
+
+/* scroll header */
+var lastScrollTop = 0;
+window.addEventListener("scroll", function(){ 
+  let header = document.querySelector("header.header");
+  var st = window.pageYOffset || document.documentElement.scrollTop; 
+  if (st > lastScrollTop){
+    header.classList.add("header_hide")
+  } else {
+    header.classList.remove("header_hide")
+  }
+  lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);
