@@ -1,15 +1,52 @@
 "use strict";
 
 /* slider */
+/* 
+  пагинация в этом слайдере не переключается автоматически.
+  узнал об этом только когда заканчивал.
+  поэтому решил просто пересоздавать слайдер.
+*/
+var sliderTpe = null;
 var swiper = new Swiper('.swiper-container', {
   pagination: {
     el: '.swiper-pagination',
-    type: 'fraction',
+    type: window.innerWidth < 767 ? 'bullets' : 'fraction'
   },
   navigation: {
     nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+    prevEl: '.swiper-button-prev'
+  }
+});
+
+
+$(window).resize(()=>{
+  if(window.innerWidth < 767){
+    if(sliderTpe !== 'mobile'){
+      sliderTpe = 'mobile';
+      swiper.destroy(true,false);
+      swiper = new Swiper('.swiper-container', {
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets'
+        },
+      });
+    }
+  }else{
+    if(sliderTpe !== 'desctop'){
+      sliderTpe = 'desctop';
+      swiper.destroy(true,false);
+      swiper = new Swiper('.swiper-container', {
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'fraction'
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      });
+    }
+  }
 });
 
 /* promo */
@@ -41,6 +78,7 @@ function toggleIt(event){
     parent.classList.remove("promo__item_de-active")
     parent.classList.add("promo__item_active")
   }
+  $(this).blur()
 }
 
 let promoItems = document.querySelectorAll(".promo__item");
