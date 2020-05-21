@@ -64,6 +64,69 @@ let newsList = [
     text: 'Замедление Китая и общая неопределенность заморозили активы населения',
     date: '31.05.2019'
   },
+  { 
+    image: '/assets/images/news-0.jpg',
+    link: '#',
+    name: 'Киберпреступники тратят на атаки до  000',
+    text: 'Польша в суде ЕС добилась отмены разрешения Еврокомиссии на допуск «Газпрома» к мощностям Opal',
+    date: '10.07.2019'
+  },
+  { 
+    image: '/assets/images/news-1.jpg',
+    link: '#',
+    name: '«Хотите, чтобы дети сотрудничали и решали проблемы? Тогда игра необходима»',
+    text: 'Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать',
+    date: '25.06.2019'
+  },
+  { 
+    image: '/assets/images/news-2.jpg',
+    link: '#',
+    name: 'Глобального среднего класса больше не становится',
+    text: 'Замедление Китая и общая неопределенность заморозили активы населения',
+    date: '31.05.2019'
+  },
+  { 
+    image: '/assets/images/news-3.jpg',
+    link: '#',
+    name: 'Скорость доступа к запрещенным сайтам ограничит суд',
+    text: 'Польша в суде ЕС добилась отмены разрешения Еврокомиссии допуск «Газпрома» к мощностям Opal',
+    date: '10.07.2019'
+  },
+  { 
+    image: '/assets/images/news-4.jpg',
+    link: '#',
+    name: 'Самая читающая страна в мире',
+    text: 'Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать',
+    date: '25.06.2019'
+  },
+  { 
+    image: '/assets/images/news-5.jpg',
+    link: '#',
+    name: 'Нуждаюсь в некоторой степени',
+    text: 'Замедление Китая и общая неопределенность заморозили активы населения',
+    date: '31.05.2019'
+  },
+  { 
+    image: '/assets/images/news-6.jpg',
+    link: '#',
+    name: 'Следственный комитет ищет экс-главу Северстали',
+    text: 'Польша в суде ЕС добилась отмены разрешения Еврокомиссии на допуск «Газпрома» к мощностям Opal',
+    date: '10.07.2019'
+  },
+  { 
+    image: '/assets/images/news-7.jpg',
+    link: '#',
+    name: '«ПИК» уходит с Лондонской фондовой биржи',
+    text: 'Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать',
+    date: '25.06.2019'
+  },
+  { 
+    image: '/assets/images/news-8.jpg',
+    link: '#',
+    name: 'Самая читающая страна в мире',
+    text: 'Замедление Китая и общая неопределенность заморозили активы населения',
+    date: '31.05.2019'
+  },
 ];
 
 class News {
@@ -157,7 +220,7 @@ class News {
 
   onClickFilterItem(){
     event.stopPropagation();
-
+    this.currentPage = 0;
     if(event.target.classList.contains("news-filter__list")){
       return
     }
@@ -179,6 +242,12 @@ class News {
       this.listNews.innerHTML = 'Нет новостей';
     }else{
       this.listNews.innerHTML = '';
+    }
+
+    if(arr.length > this.maxItems){
+      this.showButtonLoadMore();
+    }else{
+      this.hideButtonLoadMore();
     }
 
     let parent = event.target.closest(".news-filter__item");
