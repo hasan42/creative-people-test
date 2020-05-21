@@ -7,7 +7,14 @@
   поэтому решил просто пересоздавать слайдер.
 */
 var sliderTpe = null;
-var swiper = new Swiper('.swiper-container', {
+var myPromo = new Swiper('.myPromo', {
+  pagination: {
+    el: '.swiper-pagination',
+    type: window.innerWidth < 767 ? 'bullets' : 'fraction'
+  }
+});
+
+var mySlider = new Swiper('.mySlider', {
   pagination: {
     el: '.swiper-pagination',
     type: window.innerWidth < 767 ? 'bullets' : 'fraction'
@@ -21,21 +28,23 @@ var swiper = new Swiper('.swiper-container', {
 
 $(window).resize(()=>{
   if(window.innerWidth < 767){
+
     if(sliderTpe !== 'mobile'){
       sliderTpe = 'mobile';
-      swiper.destroy(true,false);
-      swiper = new Swiper('.swiper-container', {
+      mySlider.destroy(true,false);
+      mySlider = new Swiper('.mySlider', {
         pagination: {
           el: '.swiper-pagination',
           type: 'bullets'
         },
       });
     }
+
   }else{
     if(sliderTpe !== 'desctop'){
       sliderTpe = 'desctop';
-      swiper.destroy(true,false);
-      swiper = new Swiper('.swiper-container', {
+      mySlider.destroy(true,false);
+      mySlider = new Swiper('.mySlider', {
         pagination: {
           el: '.swiper-pagination',
           type: 'fraction'

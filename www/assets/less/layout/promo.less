@@ -18,6 +18,50 @@
   @media screen and (max-width: 1023px) {
     flex-direction: column;
   }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+.promo_slider {
+  display: none;
+  margin-top: 30px;
+  min-height: 417px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  .swiper-container {
+    height: 100%;
+  }
+  .swiper-pagination-bullet {
+    opacity: 1;
+    margin: 0 !important;
+    width: 7px;
+    height: 7px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    background: transparent;
+    &:not(:last-child) {
+      margin-right: 11px !important;
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background: #fff;
+  }
+  .promo__item__content {
+    padding-top: 57px;
+  }
+  .promo__item__name {
+    margin-top: 14px;
+  }
+  .promo__item__text {
+    margin-top: 39px;
+  }
+  .swiper-pagination {
+    bottom: 55px;
+  }
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
 }
 .promo__item {
   cursor: pointer;
