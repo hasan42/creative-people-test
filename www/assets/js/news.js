@@ -73,6 +73,8 @@ class News {
   loadMoreBtn = null;
   currentPage = 0;
   maxItems = 9;
+  filterMonth = '00';
+  filterYear = '2019';
 
   constructor(list) {
     this.newsFull = list;
@@ -155,16 +157,23 @@ class News {
 
   onClickFilterItem(){
     event.stopPropagation();
+
+    if(event.target.classList.contains("news-filter__list")){
+      return
+    }
+    let arr = null;
     let filter = event.target.getAttribute('data-filter');
+
     if(filter.length > 2){
-      // month
-      filter = '.'+filter+'.';
+      this.filterYear = filter;
     }else{
-      // year
-      filter = '.'+filter;
+      this.filterMonth = filter;
     }
 
-    let arr = this.newsFull.filter( el => el.date.indexOf(filter) !== -1 )
+    let filterString = this.filterMonth === '00' ? `.${this.filterYear}` : `.${this.filterMonth}.${this.filterYear}`;
+
+    arr = this.newsFull.filter( el => el.date.indexOf(filterString) !== -1 )
+    
     this.news = arr;
     if(arr.length <= 0){
       this.listNews.innerHTML = 'Нет новостей';
@@ -172,34 +181,15 @@ class News {
       this.listNews.innerHTML = '';
     }
 
-    let parent = event.target.parentNode;
+    let parent = event.target.closest(".news-filter__item");
     parent.classList.toggle("news-filter__item_open");
+
+    let text = event.target.textContent;
+    let selected = event.target.parentNode.parentNode.querySelector(".news-filter__selected");
+    selected.textContent = text;
 
     this.createList();
   }
-
-  // filterByMonths(month) {
-  //   let arr = this.newsFull.filter( el => el.date.indexOf(`.${month}.`) !== -1 )
-  //   this.news = arr;
-  //   this.listNews.innerHTML = '';
-  //   console.log(arr)
-  //   this.createList();
-  // }
-  // filterByYear(year) {
-  //   let arr = this.newsFull.filter( el => el.date.indexOf(`.${year}`) !== -1 )
-  //   this.news = arr;
-  //   if(arr.length <= 0){
-  //     this.listNews.innerHTML = 'Нет новостей';
-  //   }else{
-  //     this.listNews.innerHTML = '';
-  //   }
-    
-  //   console.log(arr)
-  //   this.createList();
-  // }
-
-
-
 
 }
 
